@@ -1,8 +1,50 @@
-#root {
+#root  {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+
+
+.app {
+  display: flex;
+  height: 100%;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.button {
+  width: 33%;
+  display: flex;
+  margin: auto;
+}
+
+.tasks-container {
+  border: 1px solid black;
+  flex: 1;
+  border-radius: 1rem;
+}
 

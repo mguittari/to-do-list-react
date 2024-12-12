@@ -1,10 +1,14 @@
 import "./App.css";
+import AddTaskForm from "./Input/EnterTask";
 
 function App() {
 	return (
-		<>
-			<h1>HELLO</h1>
-		</>
+		<div className="app">
+			<div className="main-container">
+				<AddTaskForm />
+				<div className="tasks-container">tâches en cours</div>
+			</div>
+		</div>
 	);
 }
 
