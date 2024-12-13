@@ -8,16 +8,12 @@
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 0;
 }
 
-
-
 .app {
   display: flex;
+  justify-content: center;
   height: 100%;
 }
 
@@ -46,5 +42,19 @@ body {
   border: 1px solid black;
   flex: 1;
   border-radius: 1rem;
+  overflow: scroll;
+}
+
+.task {
+  display: flex;
+  border-radius: 0.5rem;
+  justify-content: space-between;
+  border: 1px solid black;
+  margin: 10px;
+  text-align: center;
+}
+
+.style-text-crossed {
+  text-decoration: line-through;
 }
 
