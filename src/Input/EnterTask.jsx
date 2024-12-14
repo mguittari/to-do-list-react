@@ -30,8 +30,8 @@ export default function EnterTask({ tasks, setTasks }) {
 					type="text"
 					placeholder="Entrez une tâche"
 				/>
-				<button className="button" type="submit">
-					Valider
+				<button className="button-submit" type="submit">
+					+
 				</button>
 			</form>
 		</div>

@@ -4,7 +4,12 @@
 
 
 ## V1
-- To do liste simple
+- Crée une tâche
+- Raye une tâche
+- Supprime une tâche
+- Compteur de tâches
+- Design sympa
 
 ## V2
-- Choix d'un thème de couleur
+- Choix d'un thème de couleur (context)
+- Drag and drop

@@ -1,10 +1,28 @@
+:root {
+  --primary-color: #018f33;
+  --third-color: #cfcfeb;
+}
+
 #root  {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
   height: 100vh;
-  
+  background-color: var(--primary-color);
+  background-image: 
+    repeating-linear-gradient(
+      yellow 0, 
+      yellow 1px, 
+      transparent 2px, 
+      transparent 20px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      yellow 0,
+      yellow 1px,
+      transparent 2px,
+      transparent 20px
+    );
 }
 
 body {
@@ -22,8 +40,11 @@ body {
   flex-direction: column;
   width: 20rem;
   padding: 1rem;
-  border: 1px solid black;
-  border-radius: 1rem;
+  margin: 0.7rem 0 0.7rem 0;
+  background-color: #8799fe;
+  border-radius: 1rem;;
+  box-shadow: 3px 3px 6px black;
+
 }
 
 .form {
@@ -32,29 +53,64 @@ body {
   justify-content: center;
 }
 
-.button {
-  width: 33%;
-  display: flex;
-  margin: auto;
+.button-submit {
+  width: 2rem;
+  aspect-ratio: 1 / 1; /* Ratio largeur/hauteur : ici, 1:1 pour un carré */
+  margin: 1rem auto;
+  cursor: pointer;
+  border: none;
+  box-shadow: 3px 3px 0px #c5c5c5;
 }
+  
+  .button-submit:active {
+    color: #666;
+    transform: translate(3px, 3px);
+    box-shadow: none;
+  }
+
 
 .tasks-container {
-  border: 1px solid black;
+  /* border: 1px solid brown; */
   flex: 1;
-  border-radius: 1rem;
-  overflow: scroll;
+  
+  overflow-y: scroll; /* Scroll uniquement vertical */
+  overflow-x: hidden; /* Pas de scroll horizontal */
 }
 
 .task {
   display: flex;
   border-radius: 0.5rem;
   justify-content: space-between;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin: 10px;
   text-align: center;
+  background-color: #ffffff;
+  box-shadow: 5px 5px 0px #0054c3;     
+}
+
+.task:hover {
+  background-color: var(--third-color);
+  cursor: move;
 }
 
 .style-text-crossed {
   text-decoration: line-through;
+}
+
+.button-trash {
+  border-radius: 0 0.5rem 0.5rem 0;
+  border: none;
+  background-color: #cfcfeb;
+  cursor: pointer;
+}
+
+.button-trash:hover{
+  background-color: rgb(246, 100, 100);
+}
+
+
+
+.counter {
+  margin: 0;
 }
 

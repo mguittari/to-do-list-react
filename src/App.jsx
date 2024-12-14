@@ -33,6 +33,7 @@ function App() {
 				<div className="tasks-container">
 					<DisplayTasks tasks={tasks} deleteTask={deleteTask} />
 				</div>
+				<p className="counter">Nombres de tâches en cours : 0</p>
 			</div>
 		</div>
 	);

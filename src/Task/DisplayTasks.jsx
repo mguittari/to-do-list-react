@@ -34,8 +34,12 @@ export default function DisplayTasks({ tasks, deleteTask }) {
 			>
 				{task.text}
 			</p>
-			<button onClick={() => deleteTask(task.id)} type="submit">
-				<FaTrashAlt />
+			<button
+				className="button-trash"
+				onClick={() => deleteTask(task.id)}
+				type="submit"
+			>
+				<FaTrashAlt className="test" />
 			</button>
 		</div>
 	));
