@@ -1,8 +1,162 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Outfit:wght@100..900&display=swap');
+:root {
+  --primary-color: #018f33;
+  --second-color: #0054c3;
+  --third-color: #cfcfeb;
+  --fourth-color: #0303a8;
+
+  --title-font-family: "Caprasimo";
+  --main-font-family: "Outfit";
 }
 
+#root  {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: var(--primary-color);
+  background-image: 
+    repeating-linear-gradient(
+      yellow 0, 
+      yellow 1px, 
+      transparent 2px, 
+      transparent 50px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      yellow 0,
+      yellow 1px,
+      transparent 2px,
+      transparent 50px
+    );
+}
 
+body, h1 {
+  margin: 0;
+}
+
+h1 {
+  font-family: var(--title-font-family);
+  font-size: 3rem;
+  color: #0303a8;
+  text-align: center;
+  margin: 1rem 0 1rem 0;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  padding: 1rem;
+  margin: 0.7rem 1rem 0.7rem 1rem;
+  background-color: #8799fe;
+  border-radius: 1rem;;
+  box-shadow: 3px 3px 6px black;
+
+}
+
+.container {
+  height: 4rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Outfit";
+}
+
+.input-new-task {
+  box-sizing: border-box;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  padding-left: 5px;
+  border: 3px solid white;
+  height: 3rem;
+  width: 100%;
+}
+
+.input-new-task:focus {
+  outline: none; /* Supprime le style par défaut */
+  border-color: var(--second-color); /* Ajoute un style personnalisé */
+  
+}
+
+.button-submit {
+  width: 4rem;
+  color: var(--second-color);
+  font-weight: bold;
+  font-size: 1.5rem;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    margin: 0.5rem auto;
+    cursor: pointer;
+    border: 4px solid var(--second-color);
+    transition: transform ease-in-out;
+}
+  
+  .button-submit:active {
+  color: #666;
+  transform: scale(0.95);
+  border-color: #666;
+  box-shadow:  none;
+  }
+
+
+.tasks-container {
+  /* border: 1px solid brown; */
+  flex: 1;
+  overflow-y: scroll; /* Scroll uniquement vertical */
+  overflow-x: hidden; /* Pas de scroll horizontal */
+  scrollbar-color: white #8799fe;
+  scrollbar-width: thin;
+}
+
+.task {
+  display: flex;
+  border-radius: 0.5rem;
+  justify-content: space-between;
+  font-family: var(--main-font-family);
+  font-size: 1.1rem;
+  margin: 10px;
+  text-align: center;
+  background-color: #ffffff;
+  box-shadow: 5px 5px 0px var(--second-color);
+}
+
+.task:hover {
+  background-color: var(--third-color);
+  cursor: move;
+}
+
+.style-text-crossed {
+  text-decoration: line-through;
+}
+
+.button-trash {
+  border-radius: 0 0.5rem 0.5rem 0;
+  border: none;
+  background-color: #cfcfeb;
+  cursor: pointer;
+}
+
+.button-trash:hover{
+  background-color: rgb(246, 100, 100);
+}
+
+.counter {
+  margin: 1rem 0 0 0;
+  text-align: center;
+  font-family: var(--main-font-family);
+}
+
+.error-msg {
+  margin: 0;
+}
