@@ -1,6 +1,13 @@
 import { useState } from "react";
 
-export default function EnterTask({ tasks, setTasks, count, setCount }) {
+export default function EnterTask({
+	tasks,
+	setTasks,
+	count,
+	setCount,
+	counterId,
+	setCounterId,
+}) {
 	const [inputValue, setInputValue] = useState("");
 
 	const [errorMsg, setErrorMsg] = useState("");
@@ -10,21 +17,21 @@ export default function EnterTask({ tasks, setTasks, count, setCount }) {
 		if (inputValue.length >= 0) {
 			setErrorMsg("");
 		}
-
 		setInputValue(e.target.value);
 	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (inputValue === "") {
-			setErrorMsg("La nouvelle tâche ne peut être vide");
+			setErrorMsg("La tâche doit contenir entre 3 et 50 caractères max");
 			return;
 		}
-		const newTask = { id: tasks.length, text: inputValue };
+		const newTask = { id: counterId, text: inputValue, is_checked: false };
 		setTasks([...tasks, newTask]);
 		setInputValue("");
 		setErrorMsg("");
 		setCount(count + 1);
+		setCounterId(counterId + 1);
 	};
 
 	return (
@@ -38,6 +45,8 @@ export default function EnterTask({ tasks, setTasks, count, setCount }) {
 						onChange={handleChange}
 						type="text"
 						placeholder="Entrez une tâche"
+						minLength={3}
+						maxLength={50}
 					/>
 					{errorMsg && <p className="error-msg">{errorMsg}</p>}
 				</div>

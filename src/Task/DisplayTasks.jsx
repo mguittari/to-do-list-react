@@ -1,14 +1,21 @@
-import { useState } from "react";
 import { FaTrashAlt } from "react-icons/fa";
 
-export default function DisplayTasks({ tasks, deleteTask }) {
-	const [taskStates, setTaskStates] = useState({});
-
+export default function DisplayTasks({ tasks, setTasks, deleteTask }) {
 	const handleCheckboxChange = (id) => {
-		// Mettre à jour directement l'état pour la tâche concernée
-		const updatedStates = { ...taskStates };
-		updatedStates[id] = !taskStates[id]; // Inverser l'état de la tâche
-		setTaskStates(updatedStates);
+		// Mettre à jour le tableau des tâches
+		const updatedTasks = tasks.map((task) => {
+			// Si l'id de la tâche correspond à celui qui a été cliqué, on inverse sa valeur `is_checked`
+			if (task.id === id) {
+				return {
+					...task,
+					is_checked: !task.is_checked,
+				};
+			}
+			// Sinon, on retourne la tâche telle quelle
+			return task;
+		});
+		// Mettre à jour l'état avec le tableau modifié
+		setTasks(updatedTasks);
 	};
 
 	return tasks.map((task) => (
@@ -16,12 +23,12 @@ export default function DisplayTasks({ tasks, deleteTask }) {
 			<input
 				name={`checkbox-${task.id}`}
 				type="checkbox"
-				value={taskStates[task.id]}
+				value={tasks.is_checked}
 				onChange={() => handleCheckboxChange(task.id)}
 			/>
 			<p
 				className={
-					taskStates[task.id] ? "style-text-crossed" : "style-text-regular"
+					task.is_checked ? "style-text-crossed" : "style-text-regular"
 				}
 			>
 				{task.text}

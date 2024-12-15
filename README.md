@@ -1,6 +1,10 @@
 # React To Do List
 
-![Maquette to do list](/src/assets/to-do-list-react.drawio.png);
+![Maquette to do list](/src/assets/to-do-list-react.drawio.png)
+
+![Mobile version](/src/assets/to-do-mobile.png)
+
+![Desktop version](/src/assets/to-do-desktop.png)
 
 
 ## V1
@@ -13,3 +17,4 @@
 ## V2
 - Choix d'un thème de couleur (context)
 - Drag and drop
+- Stockage dans le local storage

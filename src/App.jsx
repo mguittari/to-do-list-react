@@ -7,17 +7,13 @@ function App() {
 	const [tasks, setTasks] = useState([
 		{
 			id: 0,
-			text: "Tâche à faire 1",
+			text: "Construire une fusée",
+			is_checked: false,
 		},
 	]);
 
 	const [count, setCount] = useState(1);
-
-	useEffect(() => {
-		tasks.forEach((task, index) => {
-			task.id = index; // ID = index dans le tableau
-		});
-	});
+	const [counterId, setCounterId] = useState(1);
 
 	const deleteTask = (id) => {
 		// Mettre le résultat du filter dans une variable
@@ -36,9 +32,15 @@ function App() {
 					setTasks={setTasks}
 					count={count}
 					setCount={setCount}
+					counterId={counterId}
+					setCounterId={setCounterId}
 				/>
 				<div className="tasks-container">
-					<DisplayTasks tasks={tasks} deleteTask={deleteTask} />
+					<DisplayTasks
+						tasks={tasks}
+						setTasks={setTasks}
+						deleteTask={deleteTask}
+					/>
 				</div>
 				<p className="counter">Nombres de tâches en cours : {count}</p>
 			</div>
