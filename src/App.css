@@ -3,6 +3,7 @@
   --primary-color: #018f33;
   --second-color: #0054c3;
   --third-color: #cfcfeb;
+  --fourth-color: #0303a8;
 
   --title-font-family: "Caprasimo";
   --main-font-family: "Outfit";
@@ -52,7 +53,7 @@ h1 {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 550px;
+  max-width: 400px;
   padding: 1rem;
   margin: 0.7rem 1rem 0.7rem 1rem;
   background-color: #8799fe;
@@ -61,19 +62,25 @@ h1 {
 
 }
 
+.container {
+  height: 4rem;
+}
+
 .form {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family: "Outfit";
 }
 
 .input-new-task {
-  height: 3rem;
+  box-sizing: border-box;
   border-radius: 0.5rem;
-  font-family: "Outfit";
   font-size: 1.1rem;
   padding-left: 5px;
   border: 3px solid white;
+  height: 3rem;
+  width: 100%;
 }
 
 .input-new-task:focus {
@@ -89,7 +96,7 @@ h1 {
   font-size: 1.5rem;
     border-radius: 50%;
     aspect-ratio: 1 / 1;
-    margin: 1rem auto;
+    margin: 0.5rem auto;
     cursor: pointer;
     border: 4px solid var(--second-color);
     transition: transform ease-in-out;
@@ -108,6 +115,8 @@ h1 {
   flex: 1;
   overflow-y: scroll; /* Scroll uniquement vertical */
   overflow-x: hidden; /* Pas de scroll horizontal */
+  scrollbar-color: white #8799fe;
+  scrollbar-width: thin;
 }
 
 .task {
@@ -148,3 +157,6 @@ h1 {
   font-family: var(--main-font-family);
 }
 
+.error-msg {
+  margin: 0;
+}
