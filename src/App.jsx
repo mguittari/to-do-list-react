@@ -11,6 +11,8 @@ function App() {
 		},
 	]);
 
+	const [count, setCount] = useState(1);
+
 	useEffect(() => {
 		tasks.forEach((task, index) => {
 			task.id = index; // ID = index dans le tableau
@@ -22,18 +24,23 @@ function App() {
 		const updatedTasks = tasks.filter((task) => task.id !== id);
 		// Utiliser la variable pour mettre à jour l'état
 		setTasks(updatedTasks);
+		setCount(count - 1);
 	};
-
-	console.log("tasks in app ->>", tasks);
 
 	return (
 		<div className="app">
 			<div className="main-container">
-				<AddTaskForm tasks={tasks} setTasks={setTasks} />
+				<h1>TO DO LIST</h1>
+				<AddTaskForm
+					tasks={tasks}
+					setTasks={setTasks}
+					count={count}
+					setCount={setCount}
+				/>
 				<div className="tasks-container">
 					<DisplayTasks tasks={tasks} deleteTask={deleteTask} />
 				</div>
-				<p className="counter">Nombres de tâches en cours : 0</p>
+				<p className="counter">Nombres de tâches en cours : {count}</p>
 			</div>
 		</div>
 	);

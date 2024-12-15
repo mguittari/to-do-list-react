@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Outfit:wght@100..900&display=swap');
 :root {
   --primary-color: #018f33;
+  --second-color: #0054c3;
   --third-color: #cfcfeb;
+
+  --title-font-family: "Caprasimo";
+  --main-font-family: "Outfit";
 }
 
 #root  {
@@ -14,19 +19,27 @@
       yellow 0, 
       yellow 1px, 
       transparent 2px, 
-      transparent 20px
+      transparent 50px
     ),
     repeating-linear-gradient(
       90deg,
       yellow 0,
       yellow 1px,
       transparent 2px,
-      transparent 20px
+      transparent 50px
     );
 }
 
-body {
+body, h1 {
   margin: 0;
+}
+
+h1 {
+  font-family: var(--title-font-family);
+  font-size: 3rem;
+  color: #0303a8;
+  text-align: center;
+  margin: 1rem 0 1rem 0;
 }
 
 .app {
@@ -38,9 +51,10 @@ body {
 .main-container {
   display: flex;
   flex-direction: column;
-  width: 20rem;
+  width: 100%;
+  max-width: 550px;
   padding: 1rem;
-  margin: 0.7rem 0 0.7rem 0;
+  margin: 0.7rem 1rem 0.7rem 1rem;
   background-color: #8799fe;
   border-radius: 1rem;;
   box-shadow: 3px 3px 6px black;
@@ -53,26 +67,45 @@ body {
   justify-content: center;
 }
 
+.input-new-task {
+  height: 3rem;
+  border-radius: 0.5rem;
+  font-family: "Outfit";
+  font-size: 1.1rem;
+  padding-left: 5px;
+  border: 3px solid white;
+}
+
+.input-new-task:focus {
+  outline: none; /* Supprime le style par défaut */
+  border-color: var(--second-color); /* Ajoute un style personnalisé */
+  
+}
+
 .button-submit {
-  width: 2rem;
-  aspect-ratio: 1 / 1; /* Ratio largeur/hauteur : ici, 1:1 pour un carré */
-  margin: 1rem auto;
-  cursor: pointer;
-  border: none;
-  box-shadow: 3px 3px 0px #c5c5c5;
+  width: 4rem;
+  color: var(--second-color);
+  font-weight: bold;
+  font-size: 1.5rem;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    margin: 1rem auto;
+    cursor: pointer;
+    border: 4px solid var(--second-color);
+    transition: transform ease-in-out;
 }
   
   .button-submit:active {
-    color: #666;
-    transform: translate(3px, 3px);
-    box-shadow: none;
+  color: #666;
+  transform: scale(0.95);
+  border-color: #666;
+  box-shadow:  none;
   }
 
 
 .tasks-container {
   /* border: 1px solid brown; */
   flex: 1;
-  
   overflow-y: scroll; /* Scroll uniquement vertical */
   overflow-x: hidden; /* Pas de scroll horizontal */
 }
@@ -81,11 +114,12 @@ body {
   display: flex;
   border-radius: 0.5rem;
   justify-content: space-between;
-  /* border: 1px solid black; */
+  font-family: var(--main-font-family);
+  font-size: 1.1rem;
   margin: 10px;
   text-align: center;
   background-color: #ffffff;
-  box-shadow: 5px 5px 0px #0054c3;     
+  box-shadow: 5px 5px 0px var(--second-color);
 }
 
 .task:hover {
@@ -108,9 +142,9 @@ body {
   background-color: rgb(246, 100, 100);
 }
 
-
-
 .counter {
-  margin: 0;
+  margin: 1rem 0 0 0;
+  text-align: center;
+  font-family: var(--main-font-family);
 }
 

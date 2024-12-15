@@ -3,14 +3,6 @@ import { FaTrashAlt } from "react-icons/fa";
 
 export default function DisplayTasks({ tasks, deleteTask }) {
 	const [taskStates, setTaskStates] = useState({});
-	// const [taskStates, setTaskStates] = useState(
-	// 	tasks.reduce((acc, task) => {
-	// 		acc[task.id] = false;
-	// 		return acc;
-	// 	}, {}),
-	// );
-
-	console.log(taskStates);
 
 	const handleCheckboxChange = (id) => {
 		// Mettre à jour directement l'état pour la tâche concernée

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function EnterTask({ tasks, setTasks }) {
+export default function EnterTask({ tasks, setTasks, count, setCount }) {
 	const [inputValue, setInputValue] = useState("");
 
 	const handleChange = (e) => {
@@ -9,21 +9,18 @@ export default function EnterTask({ tasks, setTasks }) {
 	};
 
 	const handleSubmit = (e) => {
-		console.log(tasks);
 		e.preventDefault();
-		const newTask = { id: tasks.length, text: inputValue, checked: false };
-
-		console.log("Nouvelle tâche !", newTask);
-		console.log("tâches -->", tasks);
+		const newTask = { id: tasks.length, text: inputValue };
 		setTasks([...tasks, newTask]);
 		setInputValue("");
+		setCount(count + 1);
 	};
 
 	return (
 		<div className="form-container">
-			<form onSubmit={handleSubmit} className="form">
-				<label htmlFor="">Entrez une tâche </label>
+			<form autoComplete="off" onSubmit={handleSubmit} className="form">
 				<input
+					className="input-new-task"
 					name="newTask"
 					value={inputValue}
 					onChange={handleChange}
