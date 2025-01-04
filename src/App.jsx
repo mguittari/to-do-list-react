@@ -1,23 +1,22 @@
-import { useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import "./App.css";
 import AddTaskForm from "./Input/EnterTask";
 import DisplayTasks from "./Task/DisplayTasks";
+import Title from "./Header/Title";
+import ButtonColorTheme from "./Header/ButtonColorTheme";
+import { ThemeContext } from "./Context/ThemeContext";
 
 function App() {
 	const [tasks, setTasks] = useState([
 		{
 			id: 0,
-			text: "Tâche à faire 1",
+			text: "Construire une fusée",
+			is_checked: false,
 		},
 	]);
 
 	const [count, setCount] = useState(1);
-
-	useEffect(() => {
-		tasks.forEach((task, index) => {
-			task.id = index; // ID = index dans le tableau
-		});
-	});
+	const [counterId, setCounterId] = useState(1);
 
 	const deleteTask = (id) => {
 		// Mettre le résultat du filter dans une variable
@@ -27,18 +26,31 @@ function App() {
 		setCount(count - 1);
 	};
 
+	const { colorTheme } = useContext(ThemeContext);
+
 	return (
 		<div className="app">
-			<div className="main-container">
-				<h1>TO DO LIST</h1>
+			<div
+				className={`main-container ${colorTheme === "Blue" ? "background-blue" : "background-red"}`}
+			>
+				<ButtonColorTheme />
+				<Title />
 				<AddTaskForm
 					tasks={tasks}
 					setTasks={setTasks}
 					count={count}
 					setCount={setCount}
+					counterId={counterId}
+					setCounterId={setCounterId}
 				/>
-				<div className="tasks-container">
-					<DisplayTasks tasks={tasks} deleteTask={deleteTask} />
+				<div
+					className={`tasks-container ${colorTheme === "Blue" ? "blue" : "red"}`}
+				>
+					<DisplayTasks
+						tasks={tasks}
+						setTasks={setTasks}
+						deleteTask={deleteTask}
+					/>
 				</div>
 				<p className="counter">Nombres de tâches en cours : {count}</p>
 			</div>
