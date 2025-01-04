@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { ThemeContext } from "../Context/ThemeContext";
 
 export default function EnterTask({
 	tasks,
@@ -34,12 +35,14 @@ export default function EnterTask({
 		setCounterId(counterId + 1);
 	};
 
+	const { colorTheme } = useContext(ThemeContext);
+
 	return (
 		<div className="form-container">
 			<form autoComplete="off" onSubmit={handleSubmit} className="form">
 				<div className="container">
 					<input
-						className="input-new-task"
+						className={`input-new-task ${colorTheme === "Blue" ? "input-new-task-blue" : "input-new-task-red"}`}
 						name="newTask"
 						value={inputValue}
 						onChange={handleChange}
@@ -51,7 +54,10 @@ export default function EnterTask({
 					{errorMsg && <p className="error-msg">{errorMsg}</p>}
 				</div>
 
-				<button className="button-submit" type="submit">
+				<button
+					className={`button-submit ${colorTheme === "Blue" ? "button-submit-blue-theme" : "button-submit-red-theme"}`}
+					type="submit"
+				>
 					+
 				</button>
 			</form>

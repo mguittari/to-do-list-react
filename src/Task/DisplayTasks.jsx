@@ -1,6 +1,10 @@
+import { useContext } from "react";
+import { ThemeContext } from "../Context/ThemeContext";
+
 import { FaTrashAlt } from "react-icons/fa";
 
 export default function DisplayTasks({ tasks, setTasks, deleteTask }) {
+	const { colorTheme } = useContext(ThemeContext);
 	const handleCheckboxChange = (id) => {
 		// Mettre à jour le tableau des tâches
 		const updatedTasks = tasks.map((task) => {
@@ -19,12 +23,16 @@ export default function DisplayTasks({ tasks, setTasks, deleteTask }) {
 	};
 
 	return tasks.map((task) => (
-		<div key={task.id} className="task">
+		<div
+			key={task.id}
+			className={`task ${colorTheme === "Blue" ? "task-blue-theme" : "task-red-theme"}`}
+		>
 			<input
 				name={`checkbox-${task.id}`}
 				type="checkbox"
 				value={tasks.is_checked}
 				onChange={() => handleCheckboxChange(task.id)}
+				className={colorTheme === "Blue" ? "checkbox-blue" : "checkbox-red"}
 			/>
 			<p
 				className={
@@ -34,7 +42,7 @@ export default function DisplayTasks({ tasks, setTasks, deleteTask }) {
 				{task.text}
 			</p>
 			<button
-				className="button-trash"
+				className={`button-trash ${colorTheme === "Blue" ? "button-trash" : "button-trash-red-theme"}`}
 				onClick={() => deleteTask(task.id)}
 				type="submit"
 			>
