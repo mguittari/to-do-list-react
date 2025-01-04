@@ -5,6 +5,10 @@
   --third-color: #cfcfeb;
   --fourth-color: #0303a8;
 
+  --first-red-color-theme: #d90707;
+  --second-red-color-theme: #ff4a4a;
+  --third-red-color-theme: #fa9898;
+
   --title-font-family: "Caprasimo";
   --main-font-family: "Outfit";
 }
@@ -43,6 +47,10 @@ h1 {
   margin: 1rem 0 1rem 0;
 }
 
+.red-title {
+  color: var(--first-red-color-theme);
+}
+
 .app {
   display: flex;
   justify-content: center;
@@ -56,11 +64,21 @@ h1 {
   max-width: 400px;
   padding: 1rem;
   margin: 0.7rem 1rem 0.7rem 1rem;
-  background-color: #8799fe;
   border-radius: 1rem;;
   box-shadow: 3px 3px 10px black;
-
 }
+
+.background-blue {
+  background-color: #8799fe;
+}
+
+.background-red {
+  background-color: var(--third-red-color-theme);
+}
+
+/* .main-container-red-theme {
+  background-color: var(se);
+} */
 
 .container {
   height: 4rem;
@@ -84,23 +102,35 @@ h1 {
   font-family: var(--main-font-family);
 }
 
-.input-new-task:focus {
+.input-new-task-blue:focus {
   outline: none; /* Supprime le style par défaut */
   border-color: var(--second-color); /* Ajoute un style personnalisé */
-  
+}
+
+.input-new-task-red:focus {
+  outline: none;
+  border-color: var(--second-red-color-theme);
 }
 
 .button-submit {
   width: 4rem;
-  color: var(--second-color);
   font-weight: bold;
   font-size: 1.5rem;
-    border-radius: 50%;
-    aspect-ratio: 1 / 1;
-    margin: 0.5rem auto;
-    cursor: pointer;
-    border: 4px solid var(--second-color);
-    transition: transform ease-in-out;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  margin: 0.5rem auto;
+  cursor: pointer;
+  transition: transform ease-in-out;
+}
+
+.button-submit-blue-theme {
+  color: var(--second-color);
+  border: 4px solid var(--second-color);
+}
+
+.button-submit-red-theme {
+  color: var(--second-red-color-theme);
+  border: 4px solid var(--second-red-color-theme);
 }
   
   .button-submit:active {
@@ -120,6 +150,14 @@ h1 {
   scrollbar-width: thin;
 }
 
+.blue {
+  scrollbar-color: white #8799fe;
+}
+
+.red {
+  scrollbar-color: white var(--third-red-color-theme);
+}
+
 .task {
   display: flex;
   border-radius: 0.5rem;
@@ -129,7 +167,14 @@ h1 {
   margin: 10px;
   text-align: center;
   background-color: #ffffff;
+}
+
+.task-blue-theme {
   box-shadow: 5px 5px 0px var(--second-color);
+}
+
+.task-red-theme {
+  box-shadow: 5px 5px 0px var(--second-red-color-theme);
 }
 
 .style-text-crossed {
@@ -146,6 +191,14 @@ h1 {
 
 .button-trash:hover{
   background-color: rgb(246, 100, 100);
+}
+
+.button-trash-red-theme:hover{
+  background-color: rgb(100, 163, 246);
+}
+
+.checkbox-red {
+  accent-color: red; /* Couleur personnalisée */
 }
 
 .counter {
@@ -169,6 +222,9 @@ h1 {
 
 @media screen and (min-width: 768px){
   .task:hover {
+    background-color: var(--third-color);
+  }
+  .task-red-theme:hover {
     background-color: var(--third-color);
   }
 }
