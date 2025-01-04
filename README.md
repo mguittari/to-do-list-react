@@ -15,6 +15,8 @@
 - Design sympa
 
 ## V2
-- Choix d'un thème de couleur (context)
-- Drag and drop
+- Choix d'un thème de couleur (bleu / rouge)
 - Stockage dans le local storage
+
+## V3
+- Drag and drop
