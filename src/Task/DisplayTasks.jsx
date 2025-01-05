@@ -20,6 +20,7 @@ export default function DisplayTasks({ tasks, setTasks, deleteTask }) {
 		});
 		// Mettre à jour l'état avec le tableau modifié
 		setTasks(updatedTasks);
+		localStorage.setItem("Saved Tasks", JSON.stringify(updatedTasks));
 	};
 
 	return tasks.map((task) => (
