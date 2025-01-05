@@ -15,6 +15,11 @@ function App() {
 		},
 	]);
 
+	const getMaxTaskId = (tasks) => {
+		if (!tasks.length) return 0; // Retourne 0 si le tableau est vide
+		return Math.max(...tasks.map((task) => task.id));
+	};
+
 	const [count, setCount] = useState(() => {
 		const savedTasks = JSON.parse(localStorage.getItem("Saved Tasks"));
 		return savedTasks ? savedTasks.length : 1; // Si le localStorage a des tâches, récupère la longueur sinon retourne 1
@@ -22,7 +27,7 @@ function App() {
 
 	const [counterId, setCounterId] = useState(() => {
 		const savedTasks = JSON.parse(localStorage.getItem("Saved Tasks"));
-		return savedTasks ? savedTasks.length : 1; // Récupère le dernier ID ou démarre à 1
+		return savedTasks ? getMaxTaskId(savedTasks) + 1 : 1; // Récupère le dernier ID ou démarre à 1
 	});
 
 	const deleteTask = (id) => {
