@@ -28,11 +28,14 @@ export default function EnterTask({
 			return;
 		}
 		const newTask = { id: counterId, text: inputValue, is_checked: false };
-		setTasks([...tasks, newTask]);
+
+		const updatedTasks = [...tasks, newTask];
+		setTasks(updatedTasks); // Mets à jour l'état local
 		setInputValue("");
 		setErrorMsg("");
 		setCount(count + 1);
 		setCounterId(counterId + 1);
+		localStorage.setItem("Saved Tasks", JSON.stringify(updatedTasks));
 	};
 
 	const { colorTheme } = useContext(ThemeContext);
