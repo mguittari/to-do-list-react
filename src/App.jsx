@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./App.css";
 import AddTaskForm from "./Input/EnterTask";
 import DisplayTasks from "./Task/DisplayTasks";
@@ -7,7 +7,7 @@ import ButtonColorTheme from "./Header/ButtonColorTheme";
 import { ThemeContext } from "./Context/ThemeContext";
 
 function App() {
-	const [tasks, setTasks] = useState([
+	let [tasks, setTasks] = useState([
 		{
 			id: 0,
 			text: "Construire une fusée",
@@ -15,18 +15,34 @@ function App() {
 		},
 	]);
 
-	const [count, setCount] = useState(1);
-	const [counterId, setCounterId] = useState(1);
+	const [count, setCount] = useState(() => {
+		const savedTasks = JSON.parse(localStorage.getItem("Saved Tasks"));
+		return savedTasks ? savedTasks.length : 1; // Si le localStorage a des tâches, récupère la longueur sinon retourne 1
+	});
+
+	const [counterId, setCounterId] = useState(() => {
+		const savedTasks = JSON.parse(localStorage.getItem("Saved Tasks"));
+		return savedTasks ? savedTasks.length : 1; // Récupère le dernier ID ou démarre à 1
+	});
 
 	const deleteTask = (id) => {
 		// Mettre le résultat du filter dans une variable
 		const updatedTasks = tasks.filter((task) => task.id !== id);
 		// Utiliser la variable pour mettre à jour l'état
 		setTasks(updatedTasks);
+		localStorage.setItem("Saved Tasks", JSON.stringify(updatedTasks));
 		setCount(count - 1);
 	};
 
 	const { colorTheme } = useContext(ThemeContext);
+
+	useEffect(() => {
+		const storedTasks = localStorage.getItem("Saved Tasks");
+		console.log("Données récupérées au démarrage :", storedTasks);
+		if (storedTasks) {
+			setTasks(JSON.parse(storedTasks));
+		}
+	}, []);
 
 	return (
 		<div className="app">

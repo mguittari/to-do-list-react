@@ -1,10 +1,8 @@
 # React To Do List
 
-![Maquette to do list](/src/assets/to-do-list-react.drawio.png)
+![Blue version](/src/assets/todolist-1.png)
 
-![Mobile version](/src/assets/to-do-mobile.png)
-
-![Desktop version](/src/assets/to-do-desktop.png)
+![Red version](/src/assets/todolist-2.png)
 
 
 ## V1
@@ -13,6 +11,7 @@
 - Supprime une tâche
 - Compteur de tâches
 - Design sympa
+- Responsive
 
 ## V2
 - Choix d'un thème de couleur (bleu / rouge)
