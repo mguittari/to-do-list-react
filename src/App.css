@@ -47,7 +47,7 @@ body, h1 {
 .button-toggle-theme {
   width: 1.5rem;
   height: 1.5rem;
-  border: none;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   cursor: pointer;
   transition: transform ease-in-out;
@@ -213,9 +213,9 @@ h1 {
 
 .button-trash {
   border-radius: 0 0.5rem 0.5rem 0;
-  border: none;
   background-color: #cfcfeb;
   cursor: pointer;
+  border: none;
 }
 
 .button-trash:hover{
