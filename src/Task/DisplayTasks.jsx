@@ -16,10 +16,12 @@ export default function DisplayTasks({ tasks, setTasks, deleteTask }) {
 				};
 			}
 			// Sinon, on retourne la tâche telle quelle
+			console.log(task);
 			return task;
 		});
 		// Mettre à jour l'état avec le tableau modifié
 		setTasks(updatedTasks);
+		console.log("update task check -->", updatedTasks);
 		localStorage.setItem("Saved Tasks", JSON.stringify(updatedTasks));
 	};
 
@@ -31,7 +33,7 @@ export default function DisplayTasks({ tasks, setTasks, deleteTask }) {
 			<input
 				name={`checkbox-${task.id}`}
 				type="checkbox"
-				value={tasks.is_checked}
+				checked={task.is_checked}
 				onChange={() => handleCheckboxChange(task.id)}
 				className={colorTheme === "Blue" ? "checkbox-blue" : "checkbox-red"}
 			/>
