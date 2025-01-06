@@ -47,10 +47,15 @@ body, h1 {
 .button-toggle-theme {
   width: 1.5rem;
   height: 1.5rem;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
+  border-radius: 30px;
   cursor: pointer;
   transition: transform ease-in-out;
+}
+
+.button-toggle-theme::before {
+  content: "";
+  display: block;
+  padding-top: 100%; /* Force un rapport 1:1 */
 }
 
 .button-toggle-theme:active {
