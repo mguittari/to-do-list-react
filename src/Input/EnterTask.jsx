@@ -61,7 +61,7 @@ export default function EnterTask({
 					className={`button-submit ${colorTheme === "Blue" ? "button-submit-blue-theme" : "button-submit-red-theme"}`}
 					type="submit"
 				>
-					+
+					<p className="cross">+</p>
 				</button>
 			</form>
 		</div>

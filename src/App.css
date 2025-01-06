@@ -147,14 +147,17 @@ h1 {
 }
 
 .button-submit {
-  width: 4rem;
-  font-weight: bold;
-  font-size: 2em;
-  border-radius: 50%;
-  aspect-ratio: 1 / 1;
-  margin: 0.5rem auto;
-  cursor: pointer;
-  background-color: white;
+  width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    margin: 0.5rem auto;
+    cursor: pointer;
+    background-color: white;
+}
+
+.cross {
+  font-size: 1.5rem;
+  margin: 0;
 }
 
 .button-submit-blue-theme {
@@ -229,12 +232,14 @@ h1 {
   border: none;
 }
 
-.button-trash:hover{
-  background-color: rgb(246, 100, 100);
-}
-
-.button-trash-red-theme:hover{
-  background-color: rgb(100, 163, 246);
+@media screen and (width > 768px) {
+  .button-trash:hover{
+    background-color: rgb(246, 100, 100);
+  }
+  
+  .button-trash-red-theme:hover{
+    background-color: rgb(100, 163, 246);
+  }
 }
 
 .checkbox-red {
