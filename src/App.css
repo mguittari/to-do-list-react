@@ -47,7 +47,7 @@ body, h1 {
 .button-toggle-theme {
   width: 1.5rem;
   height: 1.5rem;
-  border-radius: 30px;
+  border-radius: 100px;
   cursor: pointer;
   transition: transform ease-in-out;
 }
