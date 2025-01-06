@@ -54,23 +54,9 @@ body, h1 {
   height: 1.5rem;
   border-radius: 50%;
   cursor: pointer;
-  transition: transform ease-in-out;
-}
-
-@media (max-width: 768px) {
-  .button-toggle-theme {
-    transition: none;
-    transform: none;
-  }
-  .button-toggle-theme:active {
-    border-width: 0;
-  }
 }
 
 
-.button-toggle-theme:active {
-  border-width: 6px;
-}
 
 .button-toggle-theme-blue {
   border: 4px solid var(--second-color);
@@ -80,6 +66,15 @@ body, h1 {
 .button-toggle-theme-red {
   border: 4px solid var(--first-red-color-theme);
   background-color: var(--third-red-color-theme);
+}
+
+@media screen and (width > 768px) {
+  .button-toggle-theme {
+    transition: transform ease-in-out;
+  }
+  .button-toggle-theme:active {
+    border-width: 6px;
+  }
 }
 
 h1 {
@@ -163,7 +158,6 @@ h1 {
   aspect-ratio: 1 / 1;
   margin: 0.5rem auto;
   cursor: pointer;
-  transition: transform ease-in-out;
   background-color: white;
 }
 
@@ -177,12 +171,18 @@ h1 {
   border: 4px solid var(--second-red-color-theme);
 }
   
-  .button-submit:active {
-  color: #666;
-  transform: scale(0.95);
-  border-color: #666;
-  box-shadow: none;
+
+  @media screen and (width > 768px) {
+    .button-submit{
+      transition: transform ease-in-out;
   }
+  .button-submit:active {
+    color: #666;
+    transform: scale(0.95);
+    border-color: #666;
+    box-shadow: none;
+    }
+}
 
 
 .tasks-container {
