@@ -6,9 +6,6 @@
 
 V2 disponible ici : https://mguittari.github.io/to-do-list-react/
 
-NB: Il y a un bug quand on recharge la page avec une ou plusieurs tâches rayées.
-Je m'en occupe dès que possible. Sinon tout fonctionne.
-
 ## V1
 - Crée une tâche
 - Raye une tâche
@@ -19,7 +16,7 @@ Je m'en occupe dès que possible. Sinon tout fonctionne.
 
 ## V2
 - Choix d'un thème de couleur (bleu / rouge)
-- Stockage dans le local storage
+- Stockage du thème et des tâches dans le local storage
 
 ## V3
 - Drag and drop
