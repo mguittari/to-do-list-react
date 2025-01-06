@@ -51,8 +51,8 @@ body, h1 {
 }
 
 .button-toggle-theme {
-  width: 2rem;
-  height: 2rem;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -146,8 +146,8 @@ h1 {
 }
 
 .button-submit {
-  width: 3rem;
-    height: 3rem;
+  width: 4rem;
+    height: 4rem;
     border-radius: 50%;
     margin: 0.5rem auto;
     cursor: pointer;
@@ -155,7 +155,7 @@ h1 {
 }
 
 .cross {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin: 0;
 }
 
