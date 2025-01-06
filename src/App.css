@@ -149,6 +149,7 @@ h1 {
   margin: 0.5rem auto;
   cursor: pointer;
   transition: transform ease-in-out;
+  background-color: white;
 }
 
 .button-submit-blue-theme {
