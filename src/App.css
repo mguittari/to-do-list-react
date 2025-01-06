@@ -13,6 +13,11 @@
   --main-font-family: "Outfit";
 }
 
+html {
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
 #root  {
   margin: 0 auto;
   padding: 0;
@@ -47,9 +52,19 @@ body, h1 {
 .button-toggle-theme {
   width: 1.5rem;
   height: 1.5rem;
-  border-radius: 2rem;
+  border-radius: 50%;
   cursor: pointer;
   transition: transform ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .button-toggle-theme {
+    transition: none;
+    transform: none;
+  }
+  .button-toggle-theme:active {
+    border-width: 0;
+  }
 }
 
 
