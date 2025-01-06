@@ -47,16 +47,11 @@ body, h1 {
 .button-toggle-theme {
   width: 1.5rem;
   height: 1.5rem;
-  border-radius: 100%;
+  border-radius: 2rem;
   cursor: pointer;
   transition: transform ease-in-out;
 }
 
-.button-toggle-theme::before {
-  content: "";
-  display: block;
-  padding-top: 100%; /* Force un rapport 1:1 */
-}
 
 .button-toggle-theme:active {
   border-width: 6px;
