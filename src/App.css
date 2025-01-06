@@ -114,10 +114,6 @@ h1 {
   background-color: var(--third-red-color-theme);
 }
 
-/* .main-container-red-theme {
-  background-color: var(se);
-} */
-
 .container {
   height: 4rem;
 }
@@ -153,7 +149,7 @@ h1 {
 .button-submit {
   width: 4rem;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 2em;
   border-radius: 50%;
   aspect-ratio: 1 / 1;
   margin: 0.5rem auto;
