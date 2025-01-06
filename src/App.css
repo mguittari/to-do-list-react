@@ -212,6 +212,10 @@ h1 {
   background-color: #ffffff;
 }
 
+.checkbox-flex {
+  display: flex;
+}
+
 .task-blue-theme {
   box-shadow: 5px 5px 0px var(--second-color);
 }

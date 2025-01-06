@@ -30,13 +30,15 @@ export default function DisplayTasks({ tasks, setTasks, deleteTask }) {
 			key={task.id}
 			className={`task ${colorTheme === "Blue" ? "task-blue-theme" : "task-red-theme"}`}
 		>
-			<input
-				name={`checkbox-${task.id}`}
-				type="checkbox"
-				checked={task.is_checked}
-				onChange={() => handleCheckboxChange(task.id)}
-				className={colorTheme === "Blue" ? "checkbox-blue" : "checkbox-red"}
-			/>
+			<div className="checkbox-flex">
+				<input
+					name={`checkbox-${task.id}`}
+					type="checkbox"
+					checked={task.is_checked}
+					onChange={() => handleCheckboxChange(task.id)}
+					className={colorTheme === "Blue" ? "checkbox-blue" : "checkbox-red"}
+				/>
+			</div>
 			<p
 				className={
 					task.is_checked ? "style-text-crossed" : "style-text-regular"
